@@ -2,7 +2,50 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Document
-.states 
-each datar,i in state
-  p= datar.totalSamplesTested
+  title Nigeria Covid-19
+  link(href="styles.css" rel="stylesheet" type="text/css")
+body
+  .container
+    .header
+      // icons not working
+      h1.span.i(class="fa fa-virus") 
+        | covid-19 Nigeria Records
+      p This website provides information and Records of Covid-19 in Nigeria
+        
+    .countryrecord
+      .records
+        .records-temp.r1
+          h3.span.i(class="fa fa-diagnoses")
+            | totalSamplesTested
+          p(id="sample")= summary.data.totalSamplesTested
+
+        .records-temp.r2
+          h3.span.i(class="fa fa-bacteria")
+              | totalConfirmedCases
+          p(id="confirmCases")= summary.data.totalConfirmedCases
+
+        .records-temp.r3
+          h3.span.i(class="fa fa-procedures")
+              | totalActiveCases
+          p(id="confirmCases")= summary.data.totalActiveCases
+
+        .records-temp.r4
+          h3.span.i(class="fa fa-eject")
+              | discharged
+          p(id="confirmCases")= summary.data.discharged
+
+        .records-temp.r5
+          h3.span.i(class="fa fa-ghost")
+              | death
+          p(id="confirmCases")= summary.data.death
+
+
+    // here you include another template to display the covid stats per city
+
+    .footer
+      .footerdetails
+        p records from <bold>NCDC :</bold>
+        a(href="https://covid19.ncdc.gov.ng") check ncdc website
+        h4 designed by Bada Sulaimon
+        a(href="mailto:badasulaimon@gmail").i("fas fa-envelope")
+          | badasulaimon@gmail.com

@@ -1,0 +1,221 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+background: linear-gradient(180deg, rgb(248, 244, 244) 50%, rgba(20, 46, 30, 0.911) 40% ) ;
+font-family: 'Open Sans', sans-serif;
+
+
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: "header header header"
+    "countryrecord countryrecord countryrecord"
+    "staterecords1 staterecords1 staterecords1"
+    "footer footer footer";
+    height: 100vh;
+    text-align: center;
+    background: url("./imgs/01/Coat-of-arms-of-Nigeria-01.png");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    grid-gap: 20px;
+    
+  
+}
+.header{
+    grid-area: header;
+    font-size: 20px;
+    color: rgb(7, 100, 100);
+    text-transform: capitalize;
+    align-self: center;
+
+}
+h1 span{
+    font-size: 50px;
+}
+.countryrecord {
+    grid-area: countryrecord;
+    animation: slider 2.5s linear 3.5s ;
+    animation-fill-mode: forwards;
+    animation-timing-function: 3;
+    align-self: center;
+    text-align: center;
+}
+@keyframes slider {
+   0%{
+    transform: translateX(0px);
+   }
+   30%{
+    transform: translatez(-30px);   
+   }
+   50%{
+    transform: translateX(50px);
+   }
+
+   100%{
+    transform: translatex(0px);
+   }
+}
+.records-temp{
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: rgba(7, 7, 7, 0.925);
+    font-size: 25px;
+    border: 1px solid rgb(1, 31, 1);
+    background-color: rgba(221, 238, 220, 0.685);
+}
+h3 span{
+    color: rgb(7, 100, 100);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.records{
+    display: grid;
+    grid-auto-columns: repeat(auto-fit,minmax(100px,100px)) ;
+    grid-template-areas: "one two three"
+    "four two five";
+    grid-gap: 10px;
+    justify-content: center;
+    
+}
+.initialstate p{
+    color: rgba(15, 14, 14, 0.795);
+    border: 1px solid black;
+    background-color: rgb(238, 245, 240);
+    font-size: 20px;
+}
+.initialstate h4{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.795);
+    border: 1px solid black;
+    background-color: rgb(6, 73, 23);
+}
+.r1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    grid-area: one;
+
+}
+.r2{
+   
+    grid-column: 2/3;
+    grid-row: 1/3;
+    grid-area: two;
+
+
+}
+.r3{
+    grid-area: three;
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+.r4{
+    grid-area: four;
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+.r5{
+    grid-area: five;
+    grid-column: 3/3;
+    grid-row: 2/3;
+}
+.staterecords1{
+    grid-area: staterecords1;
+}
+.tog{
+    color: rgb(37, 37, 37);
+    columns: 4;
+    padding: 20px;
+    justify-self: center;
+    border-radius: 1rem;
+    background-color: rgba(221, 238, 220, 0.685);
+    box-shadow: 1px 4px 1px 2px rgba(15, 180, 56, 0.397);
+}
+#btn{
+    padding: 15px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    background: rgba(20, 46, 30, 0.911);
+    color:rgba(166, 218, 107, 0.856) ;
+    border: none;
+    text-align: center;
+}
+#btn:hover{
+    background-color: black;
+    cursor: pointer;
+
+}
+.footer{
+    grid-area: footer;
+    align-self: end;
+    
+    
+}
+.footerdetails{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(20, 46, 30, 0.911);
+    color: rgb(29, 28, 28);
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 10px;
+
+}
+.footerdetails a{
+    color: black;
+
+    
+}
+.footerdetails a:hover{
+    cursor: pointer;
+    background-color: blanchedalmond;
+    padding: 2px;
+}
+
+@media only screen and (max-width:550px){
+    body{
+        
+        background: linear-gradient(180deg, rgb(20, 20, 20) 50%, rgba(20, 46, 30, 0.911) 40% ) ;
+        
+    }
+    .container{
+    grid-template-columns: 1fr ;
+    grid-template-rows: repeat(4,1.5fr);
+    grid-template-areas: 
+    "header"
+    "countryrecord"
+    "staterecords1"
+    "footer";
+    };
+    .records{
+        font-size: 15px;
+        grid-template-columns: 100px 100px;
+        grid-template-rows: 1fr 1fr 1fr ;
+        text-align: center;
+    
+    }
+    .records-temp h3{ 
+        font-size: 0.6em;
+      
+    }
+    .tog{
+        columns: 2;
+        padding: 25px;
+        justify-self: center;
+        border-radius: 1rem;
+        background-color: rgba(221, 238, 220, 0.685);
+        box-shadow: 1px 4px 1px 2px rgba(15, 180, 56, 0.397);
+    }
+    .footerdetails{
+        display: block;
+    }
+   
+   
+};
